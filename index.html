@@ -971,7 +971,7 @@ textarea.form-ctrl { resize: none; }
     </p>
     <div class="hero-btns">
       <button class="btn btn-xl btn-teal" onclick="goForm()">🎮 Записаться на пробный урок</button>
-      <button class="btn btn-xl btn-ghost" onclick="scrollTo('courses')">Смотреть курсы</button>
+      <button class="btn btn-xl btn-ghost" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">Смотреть курсы</button>
     </div>
     <div class="hero-stats">
       <div class="hero-stat">
