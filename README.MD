@@ -2,7 +2,7 @@
 
 > Multilingual landing page for an online Roblox Studio coding school for children aged 6–15. Built with vanilla HTML, CSS, and JavaScript — no frameworks needed.
 
-**[Live Demo →](https://your-username.github.io/robloxkool)**
+**[Live Demo →](https://github.com/anjufehno-special/Roblox-programeerimine.git)**
 
 ---
 
@@ -80,7 +80,7 @@ Validation messages are pulled from the active language object, so errors always
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/your-username/robloxkool.git
+git clone https://github.com/anjufehno-special/Roblox-programeerimine.git
 cd robloxkool
 ```
 
@@ -108,4 +108,4 @@ No build step needed — open `index.html` directly in a browser, or use Live Se
 
 ## 📬 Contact
 
-Built by [Your Name](https://github.com/your-username) · [LinkedIn](https://linkedin.com/in/your-profile)
+Built by [Jelizaveta Kruglova](https://github.com/anjufehno-special) ·
