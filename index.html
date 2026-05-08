@@ -1,0 +1,1829 @@
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roblox Programmeerimiskool</title>
+    <meta
+      name="description"
+      content="Individuaalsed online-kursused mängude loomiseks Roblox Studios. Lastele 6–15 a. ET · RU · EN"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <div id="nav">
+      <div class="nav-in">
+        <a href="#" class="logo">
+          <div class="logo-icon">🎮</div>
+          <span>Roblox<em> programmeerimiskool</em></span>
+        </a>
+        <nav class="nav-links">
+          <a href="#for-whom" data-i18n="nav_who">Kellele</a>
+          <a href="#courses" data-i18n="nav_courses">Kursused</a>
+          <a href="#how" data-i18n="nav_how">Kuidas toimub</a>
+          <a href="#results" data-i18n="nav_results">Tulemused</a>
+          <a href="#faq" data-i18n="nav_faq">KKK</a>
+        </nav>
+        <div class="nav-right">
+          <div class="lang-sw">
+            <button class="lang-btn active" onclick="setLang('et')">ET</button>
+            <button class="lang-btn" onclick="setLang('ru')">RU</button>
+            <button class="lang-btn" onclick="setLang('en')">EN</button>
+          </div>
+          <button
+            class="btn btn-md btn-teal nav-cta"
+            onclick="goForm()"
+            data-i18n="nav_cta"
+          >
+            Registreeru →
+          </button>
+        </div>
+        <button class="nav-mob-btn" onclick="toggleNav()" id="mob-toggle">
+          ☰
+        </button>
+      </div>
+      <div id="mob-menu">
+        <a href="#for-whom" onclick="closeMob()" data-i18n="nav_who">Kellele</a>
+        <a href="#courses" onclick="closeMob()" data-i18n="nav_courses"
+          >Kursused</a
+        >
+        <a href="#how" onclick="closeMob()" data-i18n="nav_how"
+          >Kuidas toimub</a
+        >
+        <a href="#results" onclick="closeMob()" data-i18n="nav_results"
+          >Tulemused</a
+        >
+        <a href="#faq" onclick="closeMob()" data-i18n="nav_faq">KKK</a>
+        <div class="lang-sw">
+          <button class="lang-btn active" onclick="setLang('et')">ET</button
+          ><button class="lang-btn" onclick="setLang('ru')">RU</button
+          ><button class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
+        <button
+          class="btn btn-xl btn-teal"
+          style="width: 100%; margin-top: 16px"
+          onclick="
+            goForm();
+            closeMob();
+          "
+          data-i18n="hero_btn1"
+        >
+          🎮 Registreeru prooviõppele
+        </button>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <section id="hero" class="grid-bg">
+      <div class="glow hero-glow-a"></div>
+      <div class="glow hero-glow-b"></div>
+      <div class="wrap">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-badge">
+              <div class="hero-dot"></div>
+              <span class="hero-badge-text" data-i18n="hero_badge"
+                >Roblox Programmeerimiskool · 6–15 a · ET · RU · EN</span
+              >
+            </div>
+            <h1 class="hero-h1">
+              <span data-i18n="hero_h1a">Sinu laps loob</span><br />
+              <span class="hl-teal" data-i18n="hero_h1b">päris mänge</span
+              ><br />
+              <span class="hl-indigo" data-i18n="hero_h1c">Roblox Studios</span>
+            </h1>
+            <p class="hero-p" data-i18n="hero_p">
+              Individuaalsed online-tunnid elava õpetajaga. Mitte videoõpetused
+              — ainult päris praktika ja tulemus.
+            </p>
+            <div class="hero-btns">
+              <button
+                class="btn btn-xl btn-teal"
+                onclick="goForm()"
+                data-i18n="hero_btn1"
+              >
+                🎮 Registreeru prooviõppele
+              </button>
+              <button
+                class="btn btn-xl btn-ghost"
+                onclick="
+                  document
+                    .getElementById('courses')
+                    .scrollIntoView({ behavior: 'smooth' })
+                "
+                data-i18n="hero_btn2"
+              >
+                Vaata kursusi
+              </button>
+            </div>
+            <div class="hero-stats">
+              <div class="h-stat">
+                <div class="h-stat-val">
+                  <b data-i18n="stat1_val">3 taset</b>
+                </div>
+                <div class="h-stat-lab" data-i18n="stat1_lab">
+                  algajast koodini
+                </div>
+              </div>
+              <div class="h-stat">
+                <div class="h-stat-val">
+                  <b data-i18n="stat2_val">1‑ühele</b>
+                </div>
+                <div class="h-stat-lab" data-i18n="stat2_lab">
+                  individuaalselt
+                </div>
+              </div>
+              <div class="h-stat">
+                <div class="h-stat-val"><b>ET · RU · EN</b></div>
+                <div class="h-stat-lab" data-i18n="stat3_lab">õppekeeled</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-right">
+            <div style="position: relative; width: 100%; max-width: 460px">
+              <div
+                style="
+                  position: absolute;
+                  inset: 0;
+                  background: radial-gradient(
+                    circle,
+                    rgba(45, 212, 191, 0.15) 0%,
+                    transparent 65%
+                  );
+                  border-radius: 50%;
+                  filter: blur(40px);
+                "
+              ></div>
+              <img
+                src="img/img-laptop.png"
+                alt="Roblox Studio"
+                style="
+                  width: 70%;
+                  border-radius: 20px;
+                  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+                  position: relative;
+                  z-index: 2;
+                "
+              />
+              <div
+                class="float-card fc-code"
+                style="
+                  position: absolute;
+                  bottom: -16px;
+                  left: -16px;
+                  z-index: 10;
+                "
+              >
+                <div class="lc">
+                  <span class="lkw">local</span>&nbsp;<span class="lvar"
+                    >score</span
+                  >&nbsp;=&nbsp;<span class="lstr">0</span>
+                </div>
+                <div class="lc">
+                  <span class="lvar">Part</span>.<span class="lvar"
+                    >Touched</span
+                  >:<span class="lfn">Connect</span>(
+                </div>
+                <div class="lc">
+                  &nbsp;&nbsp;<span class="lkw">function</span>()
+                </div>
+                <div class="lc">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="lvar">score</span
+                  >&nbsp;+=&nbsp;<span class="lstr">10</span>
+                </div>
+                <div class="lc">&nbsp;&nbsp;<span class="lkw">end</span>)</div>
+              </div>
+              <div
+                class="float-card fc-pub"
+                style="
+                  position: absolute;
+                  top: -12px;
+                  right: -12px;
+                  z-index: 10;
+                "
+              >
+                <div class="fc-pub-dot"></div>
+                <span data-i18n="fc_pub">Mäng avaldatud 🚀</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLOGAN -->
+    <section id="slogan">
+      <div class="wrap">
+        <div class="slogan-inner">
+          <div class="slogan-left">
+            <div class="eyebrow" data-i18n="slogan_label">
+              Miks programmeerimist õppida
+            </div>
+            <h2 data-i18n="slogan_h2">
+              IT on tuleviku keel.<br />Mida varem alustada,<br />seda lihtsam.
+            </h2>
+            <p
+              style="
+                font-size: 16px;
+                color: var(--muted2);
+                line-height: 1.75;
+                max-width: 460px;
+                margin-top: 14px;
+              "
+              data-i18n="slogan_p"
+            >
+              Programmeerimisoskus arendab loogilist mõtlemist,
+              probleemilahendust ja loovust. Laps, kes loob mänge, ei õpi ainult
+              koodi kirjutama — ta õpib mõtlema nagu insener.
+            </p>
+            <div class="slogan-chips">
+              <div class="slogan-chip">
+                🧠 <span data-i18n="chip1">Loogiline mõtlemine</span>
+              </div>
+              <div class="slogan-chip">
+                🎯 <span data-i18n="chip2">Eesmärkide saavutamine</span>
+              </div>
+              <div class="slogan-chip">
+                💡 <span data-i18n="chip3">Loominguline mõtlemine</span>
+              </div>
+            </div>
+          </div>
+          <div class="slogan-right" style="position: relative">
+            <div
+              style="
+                position: absolute;
+                top: -30px;
+                right: -10px;
+                z-index: 10;
+                pointer-events: none;
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  inset: 0;
+                  background: radial-gradient(
+                    circle,
+                    rgba(45, 212, 191, 0.2) 0%,
+                    transparent 65%
+                  );
+                  border-radius: 50%;
+                  filter: blur(16px);
+                "
+              ></div>
+            </div>
+            <div class="slogan-card">
+              <div class="slogan-card-ico">📈</div>
+              <div class="slogan-card-title" data-i18n="sc1_title">
+                IT-sektor kasvab igal aastal
+              </div>
+              <div class="slogan-card-text" data-i18n="sc1_text">
+                Programmeerijad on ühed enimtasustatud spetsialistid maailmas —
+                nõudlus kasvab pidevalt.
+              </div>
+            </div>
+            <div class="slogan-card">
+              <div class="slogan-card-ico">🎮</div>
+              <div class="slogan-card-title" data-i18n="sc2_title">
+                Läbi selle, mis meeldib
+              </div>
+              <div class="slogan-card-text" data-i18n="sc2_text">
+                Roblox on lastele tuttav platvorm. Õppimine läbi meelistegevuse
+                annab parimaid tulemusi.
+              </div>
+            </div>
+            <div class="slogan-card">
+              <div class="slogan-card-ico">🧩</div>
+              <div class="slogan-card-title" data-i18n="sc3_title">
+                Varane algus — suur eelis
+              </div>
+              <div class="slogan-card-text" data-i18n="sc3_text">
+                Laps, kes alustab programmeerimist koolis, on
+                ülikoolikandidaadina sammude võrra ees.
+              </div>
+            </div>
+            <div class="slogan-card">
+              <div class="slogan-card-ico">🏆</div>
+              <div class="slogan-card-title" data-i18n="sc4_title">
+                Nähtav tulemus igal kursusel
+              </div>
+              <div class="slogan-card-text" data-i18n="sc4_text">
+                Iga kursuse lõpuks on lapsel päris mäng, mida saab käivitada ja
+                sõpradele näidata.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOR WHOM -->
+    <section id="for-whom">
+      <div class="wrap">
+        <div
+          class="eyebrow"
+          style="color: var(--indigo)"
+          data-i18n="whom_label"
+        >
+          Kellele
+        </div>
+        <h2 class="sec-title" style="color: #111" data-i18n="whom_h2">
+          Kellele see kursus sobib?
+        </h2>
+        <p
+          class="sec-sub"
+          style="color: #6b7280; margin-bottom: 40px"
+          data-i18n="whom_p"
+        >
+          Kursus sobib, kui vähemalt üks punkt kirjeldab teie last.
+        </p>
+        <div class="g4">
+          <div class="aud-card">
+            <div class="aud-ico">👾</div>
+            <div class="aud-title" data-i18n="whom1_title">Roblox'i fännid</div>
+            <div class="aud-text" data-i18n="whom1_text">
+              Mängib Robloxis tunde? On aeg minna mängijalt loojaks — see on
+              järgmine tase.
+            </div>
+          </div>
+          <div class="aud-card">
+            <div class="aud-ico">🌱</div>
+            <div class="aud-title" data-i18n="whom2_title">
+              Algajad ilma kogemuseta
+            </div>
+            <div class="aud-text" data-i18n="whom2_text">
+              Null kogemus — pole probleem. Alustame kõige alustest,
+              samm-sammult, ilma kiirustamata.
+            </div>
+          </div>
+          <div class="aud-card">
+            <div class="aud-ico">🧩</div>
+            <div class="aud-title" data-i18n="whom3_title">Loomeinimesed</div>
+            <div class="aud-text" data-i18n="whom3_text">
+              Ehitab, mõtleb välja, konstrueerib? Roblox Studio on ideaalne
+              tööriist sellisele lapsele.
+            </div>
+          </div>
+          <div class="aud-card">
+            <div class="aud-ico">🌍</div>
+            <div class="aud-title" data-i18n="whom4_title">
+              Pered üle maailma
+            </div>
+            <div class="aud-text" data-i18n="whom4_text">
+              Online-tunnid eesti, vene või inglise keeles — teile sobival ajal,
+              kõikjalt maailmast.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COURSES -->
+    <section id="courses">
+      <div class="wrap">
+        <div class="eyebrow eyebrow-indigo" data-i18n="courses_label">
+          Õppekava
+        </div>
+        <h2 class="sec-title" data-i18n="courses_h2">Kolm taset — üks tee</h2>
+        <p class="sec-sub" style="margin-bottom: 36px" data-i18n="courses_p">
+          Esimestest sammudest Roblox Studios kuni mängude avaldamiseni päris
+          programmeerimisega.
+        </p>
+        <div class="course-tabs" role="tablist">
+          <button
+            class="course-tab t-lv1"
+            onclick="switchTab('lv1', this)"
+            role="tab"
+            aria-selected="true"
+            data-i18n="tab1"
+          >
+            🌊 6–8 a
+          </button>
+          <button
+            class="course-tab"
+            onclick="switchTab('lv2', this)"
+            role="tab"
+            aria-selected="false"
+            data-i18n="tab2"
+          >
+            ⚡ 9–11 a
+          </button>
+          <button
+            class="course-tab"
+            onclick="switchTab('lv3', this)"
+            role="tab"
+            aria-selected="false"
+            data-i18n="tab3"
+          >
+            🔥 12–15 a
+          </button>
+        </div>
+
+        <div class="course-panel active lv1" id="panel-lv1">
+          <div class="cc-grid">
+            <div class="cc-main">
+              <div class="cc-head cc-head-lv1">
+                <div class="cc-head-glow"></div>
+                <div style="position: relative; z-index: 2">
+                  <div class="cc-level-tag" data-i18n="lv1_tag">
+                    🌊 LEVEL 1 · WORLD BUILDER
+                  </div>
+                  <div class="cc-title" data-i18n="lv1_title">
+                    World Builder
+                  </div>
+                  <div class="cc-sub" data-i18n="lv1_sub">
+                    Ehitame esimesi maailmu Roblox Studios — ilma koodita
+                  </div>
+                  <div class="cc-meta">
+                    <span class="badge badge-teal" data-i18n="lv1_age"
+                      >👶 6–8 aastat</span
+                    ><span class="badge badge-gray" data-i18n="lv1_len"
+                      >⏱ 12 tundi · 45 min</span
+                    ><span class="badge badge-gray" data-i18n="lv1_lvl"
+                      >Algaja</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="cc-body">
+                <div class="cc-stitle" data-i18n="cc_what">Mida õpitakse</div>
+                <ul class="cc-list">
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv1_t1"
+                      >Roblox Studio liides — paneelid, tööriistad,
+                      navigeerimine</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv1_t2"
+                      >Osadega töötamine (Parts): loomine, mastaap, pööramine,
+                      värvid, materjalid</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv1_t3"
+                      >Objektide ehitamine: majad, platvormid, dekoratsioonid,
+                      lihtsad asukohad</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv1_t4"
+                      >Terrain Editor: maa, vee, mägede ja maastiku
+                      genereerimine</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv1_t5"
+                      >Esimesed lihtsad skriptid visuaalsete plokkide
+                      kaudu</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv1_t6"
+                      >Avaldamine: mäng üles laadida ja sõpradega jagada</span
+                    >
+                  </li>
+                </ul>
+                <div class="cc-result">
+                  <div class="cc-result-lbl" data-i18n="cc_project">
+                    🎯 LÕPPPROJEKT
+                  </div>
+                  <div class="cc-result-text" data-i18n="lv1_proj">
+                    Laps ehitab oma obby — kolmemõõtmelise maailma takistuste,
+                    platvormide ja finiširajaga. Avaldab selle ja jagab
+                    sõpradega.
+                  </div>
+                </div>
+                <button
+                  class="btn btn-lg btn-teal btn-fw"
+                  onclick="goForm()"
+                  data-i18n="cc_cta"
+                >
+                  Registreeru prooviõppele →
+                </button>
+              </div>
+            </div>
+            <div class="cc-side">
+              <div class="cc-info">
+                <div class="cc-info-hd" data-i18n="cc_details">
+                  Kursuse üksikasjad
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">👶</div>
+                  <div class="cc-row-lbl" data-i18n="cc_age">Vanus</div>
+                  <div class="cc-row-val">6–8 a</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">📚</div>
+                  <div class="cc-row-lbl" data-i18n="cc_lessons">Tunde</div>
+                  <div class="cc-row-val">12</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">⏱</div>
+                  <div class="cc-row-lbl" data-i18n="cc_dur">Tunni pikkus</div>
+                  <div class="cc-row-val">45 min</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">👤</div>
+                  <div class="cc-row-lbl" data-i18n="cc_format">Formaat</div>
+                  <div class="cc-row-val" data-i18n="cc_11">1 ühele</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">💻</div>
+                  <div class="cc-row-lbl" data-i18n="cc_mode">Tunnid</div>
+                  <div class="cc-row-val" data-i18n="cc_online">Online</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">📝</div>
+                  <div class="cc-row-lbl" data-i18n="cc_exp">Kogemus</div>
+                  <div class="cc-row-val" data-i18n="cc_noexp">Null</div>
+                </div>
+              </div>
+              <div class="cc-info">
+                <div class="cc-info-hd" data-i18n="cc_tools">Tööriistad</div>
+                <div
+                  style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 5px;
+                    margin-top: 4px;
+                  "
+                >
+                  <span class="badge badge-teal">Building Tools</span
+                  ><span class="badge badge-gray">Terrain Editor</span
+                  ><span class="badge badge-gray">Parts & Models</span
+                  ><span class="badge badge-gray">Materials</span
+                  ><span class="badge badge-gray">Publishing</span>
+                </div>
+              </div>
+              <div class="cc-info">
+                <div class="cc-info-hd" data-i18n="cc_projects">
+                  Kursuse projektid
+                </div>
+                <div class="proj-item">
+                  <div class="proj-ico">🏃</div>
+                  <div>
+                    <div class="proj-name" data-i18n="p1_name">
+                      Minu esimene Obby
+                    </div>
+                    <div class="proj-type">Obstacle Course</div>
+                  </div>
+                </div>
+                <div class="proj-item">
+                  <div class="proj-ico">🏰</div>
+                  <div>
+                    <div class="proj-name" data-i18n="p2_name">
+                      Plokilossi ehitus
+                    </div>
+                    <div class="proj-type">World Building</div>
+                  </div>
+                </div>
+                <div class="proj-item">
+                  <div class="proj-ico">🌄</div>
+                  <div>
+                    <div class="proj-name" data-i18n="p3_name">
+                      Loojangusaar
+                    </div>
+                    <div class="proj-type">Terrain + Decoration</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-panel lv2" id="panel-lv2">
+          <div class="cc-grid">
+            <div class="cc-main">
+              <div class="cc-head cc-head-lv2">
+                <div class="cc-head-glow"></div>
+                <div style="position: relative; z-index: 2">
+                  <div class="cc-level-tag" data-i18n="lv2_tag">
+                    ⚡ LEVEL 2 · GAME CREATOR
+                  </div>
+                  <div class="cc-title" data-i18n="lv2_title">Game Creator</div>
+                  <div class="cc-sub" data-i18n="lv2_sub">
+                    Loome täisväärtuslikke mänge mehhanismide ja UI-ga
+                  </div>
+                  <div class="cc-meta">
+                    <span class="badge badge-indigo" data-i18n="lv2_age"
+                      >⚡ 9–11 aastat</span
+                    ><span class="badge badge-gray" data-i18n="lv2_len"
+                      >⏱ 16 tundi · 60 min</span
+                    ><span class="badge badge-gray" data-i18n="lv2_lvl"
+                      >Algaja+</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="cc-body">
+                <div class="cc-stitle" data-i18n="cc_what">Mida õpitakse</div>
+                <ul class="cc-list">
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv2_t1"
+                      >Mängutasemete disain: arhitektuur, kontrollpunktid,
+                      mängutsükkel</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv2_t2"
+                      >Interaktiivsed objektid: uksed, nupud, lõksud,
+                      päästikud</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv2_t3"
+                      >UI loomine: punktid, elud, taimer, võidu- ja
+                      kaotusekraan</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv2_t4"
+                      >Luau sissejuhatus: muutujad, tingimused (if/else),
+                      funktsioonid</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv2_t5"
+                      >Tegelased: seadistamine, animatsioonid, kiirus ja
+                      hüpped</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv2_t6"
+                      >Playtesting ja siluvimine: kuidas leida ja parandada
+                      viga</span
+                    >
+                  </li>
+                </ul>
+                <div
+                  class="cc-result"
+                  style="
+                    background: var(--lv2bg);
+                    border-color: rgba(99, 102, 241, 0.18);
+                  "
+                >
+                  <div
+                    class="cc-result-lbl"
+                    style="color: var(--indigo2)"
+                    data-i18n="cc_project"
+                  >
+                    🎯 LÕPPPROJEKT
+                  </div>
+                  <div class="cc-result-text" data-i18n="lv2_proj">
+                    Täisväärtuslik mini-mäng: simulaator või platvormmäng UI,
+                    punktide, elude ja mitme tasemega. Avaldatud Robloxis.
+                  </div>
+                </div>
+                <button
+                  class="btn btn-lg btn-indigo btn-fw"
+                  onclick="goForm()"
+                  data-i18n="cc_cta"
+                >
+                  Registreeru prooviõppele →
+                </button>
+              </div>
+            </div>
+            <div class="cc-side">
+              <div class="cc-info">
+                <div class="cc-info-hd" data-i18n="cc_details">
+                  Kursuse üksikasjad
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">⚡</div>
+                  <div class="cc-row-lbl" data-i18n="cc_age">Vanus</div>
+                  <div class="cc-row-val">9–11 a</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">📚</div>
+                  <div class="cc-row-lbl" data-i18n="cc_lessons">Tunde</div>
+                  <div class="cc-row-val">16</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">⏱</div>
+                  <div class="cc-row-lbl" data-i18n="cc_dur">Tunni pikkus</div>
+                  <div class="cc-row-val">60 min</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">👤</div>
+                  <div class="cc-row-lbl" data-i18n="cc_format">Formaat</div>
+                  <div class="cc-row-val" data-i18n="cc_11">1 ühele</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">💻</div>
+                  <div class="cc-row-lbl" data-i18n="cc_mode">Tunnid</div>
+                  <div class="cc-row-val" data-i18n="cc_online">Online</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">📝</div>
+                  <div class="cc-row-lbl" data-i18n="cc_exp">Kogemus</div>
+                  <div class="cc-row-val" data-i18n="cc_noexp2">Ei vaja</div>
+                </div>
+              </div>
+              <div class="cc-info">
+                <div class="cc-info-hd" data-i18n="cc_tools">Tööriistad</div>
+                <div
+                  style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 5px;
+                    margin-top: 4px;
+                  "
+                >
+                  <span class="badge badge-indigo">Scripting (Luau)</span
+                  ><span class="badge badge-gray">GUI / ScreenGui</span
+                  ><span class="badge badge-gray">TweenService</span
+                  ><span class="badge badge-gray">LocalScript</span
+                  ><span class="badge badge-gray">Leaderboard</span>
+                </div>
+              </div>
+              <div class="cc-info">
+                <div class="cc-info-hd" data-i18n="cc_projects">
+                  Kursuse projektid
+                </div>
+                <div class="proj-item">
+                  <div class="proj-ico">🏅</div>
+                  <div>
+                    <div class="proj-name" data-i18n="p4_name">
+                      Obby punktidega
+                    </div>
+                    <div class="proj-type">Obstacle Course + UI</div>
+                  </div>
+                </div>
+                <div class="proj-item">
+                  <div class="proj-ico">🐾</div>
+                  <div>
+                    <div class="proj-name" data-i18n="p5_name">
+                      Pet Simulator
+                    </div>
+                    <div class="proj-type">Clicker / Simulator</div>
+                  </div>
+                </div>
+                <div class="proj-item">
+                  <div class="proj-ico">⚔️</div>
+                  <div>
+                    <div class="proj-name" data-i18n="p6_name">
+                      Mini Adventure
+                    </div>
+                    <div class="proj-type">Platformer / RPG-lite</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="course-panel lv3" id="panel-lv3">
+          <div class="cc-grid">
+            <div class="cc-main">
+              <div class="cc-head cc-head-lv3">
+                <div class="cc-head-glow"></div>
+                <div style="position: relative; z-index: 2">
+                  <div class="cc-level-tag" data-i18n="lv3_tag">
+                    🔥 LEVEL 3 · STUDIO PRO
+                  </div>
+                  <div class="cc-title" data-i18n="lv3_title">Studio Pro</div>
+                  <div class="cc-sub" data-i18n="lv3_sub">
+                    Päris programmeerimine: Luau, DataStore, Remote Events
+                  </div>
+                  <div class="cc-meta">
+                    <span class="badge badge-amber" data-i18n="lv3_age"
+                      >🔥 12–15 aastat</span
+                    ><span class="badge badge-gray" data-i18n="lv3_len"
+                      >⏱ 20 tundi · 75 min</span
+                    ><span class="badge badge-gray" data-i18n="lv3_lvl"
+                      >Luau algteadmised</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="cc-body">
+                <div class="cc-stitle" data-i18n="cc_what">Mida õpitakse</div>
+                <ul class="cc-list">
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv3_t1"
+                      >Luau süvitsi: andmetüübid, tsüklid (for/while), tabelid,
+                      OOP</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv3_t2"
+                      >Klient-server arhitektuur: LocalScript vs Script,
+                      RemoteEvents</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv3_t3"
+                      >DataStore: mängija edenemise salvestamine seansside
+                      vahel</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv3_t4"
+                      >Täiustatud UI: animatsioonid, Tween, modulaarsed
+                      liidesed</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv3_t5"
+                      >Teenustega töötamine: TweenService, UserInputService,
+                      RunService</span
+                    >
+                  </li>
+                  <li>
+                    <div class="cc-ck">✓</div>
+                    <span data-i18n="lv3_t6"
+                      >Koodi struktuur: ModuleScripts, silumine, vigade
+                      lugemine</span
+                    >
+                  </li>
+                </ul>
+                <div
+                  class="cc-result"
+                  style="
+                    background: var(--lv3bg);
+                    border-color: rgba(245, 158, 11, 0.18);
+                  "
+                >
+                  <div
+                    class="cc-result-lbl"
+                    style="color: var(--amber)"
+                    data-i18n="cc_project"
+                  >
+                    🎯 LÕPPPROJEKT
+                  </div>
+                  <div class="cc-result-text" data-i18n="lv3_proj">
+                    Täisväärtuslik mäng skriptide, edenemise salvestamise,
+                    mitmemängijaga ja loetava koodiarhitektuuriga.
+                  </div>
+                </div>
+                <button
+                  class="btn btn-lg btn-amber btn-fw"
+                  onclick="goForm()"
+                  data-i18n="cc_cta"
+                >
+                  Registreeru prooviõppele →
+                </button>
+              </div>
+            </div>
+            <div class="cc-side">
+              <div class="cc-info">
+                <div class="cc-info-hd" data-i18n="cc_details">
+                  Kursuse üksikasjad
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">🔥</div>
+                  <div class="cc-row-lbl" data-i18n="cc_age">Vanus</div>
+                  <div class="cc-row-val">12–15 a</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">📚</div>
+                  <div class="cc-row-lbl" data-i18n="cc_lessons">Tunde</div>
+                  <div class="cc-row-val">20</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">⏱</div>
+                  <div class="cc-row-lbl" data-i18n="cc_dur">Tunni pikkus</div>
+                  <div class="cc-row-val">75 min</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">👤</div>
+                  <div class="cc-row-lbl" data-i18n="cc_format">Formaat</div>
+                  <div class="cc-row-val" data-i18n="cc_11">1 ühele</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">💻</div>
+                  <div class="cc-row-lbl" data-i18n="cc_mode">Tunnid</div>
+                  <div class="cc-row-val" data-i18n="cc_online">Online</div>
+                </div>
+                <div class="cc-row">
+                  <div class="cc-row-ico">📝</div>
+                  <div class="cc-row-lbl" data-i18n="cc_exp">Kogemus</div>
+                  <div class="cc-row-val" data-i18n="cc_luau">
+                    Luau algteadmised
+                  </div>
+                </div>
+              </div>
+              <div class="cc-info">
+                <div class="cc-info-hd" data-i18n="cc_tools">Tööriistad</div>
+                <div
+                  style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 5px;
+                    margin-top: 4px;
+                  "
+                >
+                  <span class="badge badge-amber">DataStoreService</span
+                  ><span class="badge badge-gray">RemoteEvents</span
+                  ><span class="badge badge-gray">ModuleScript</span
+                  ><span class="badge badge-gray">OOP in Luau</span
+                  ><span class="badge badge-gray">RunService</span>
+                </div>
+              </div>
+              <div class="cc-info">
+                <div class="cc-info-hd" data-i18n="cc_projects">
+                  Kursuse projektid
+                </div>
+                <div class="proj-item">
+                  <div class="proj-ico">💰</div>
+                  <div>
+                    <div class="proj-name" data-i18n="p7_name">
+                      Economy Simulator
+                    </div>
+                    <div class="proj-type">DataStore + Shops</div>
+                  </div>
+                </div>
+                <div class="proj-item">
+                  <div class="proj-ico">🏟️</div>
+                  <div>
+                    <div class="proj-name" data-i18n="p8_name">
+                      Tower Defense
+                    </div>
+                    <div class="proj-type">Mechanics + Multiplayer</div>
+                  </div>
+                </div>
+                <div class="proj-item">
+                  <div class="proj-ico">🌐</div>
+                  <div>
+                    <div class="proj-name" data-i18n="p9_name">
+                      Multiplayer mäng
+                    </div>
+                    <div class="proj-type">Client-Server Architecture</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how">
+      <div class="wrap">
+        <div class="eyebrow" data-i18n="how_label">Õppeformaat</div>
+        <h2 class="sec-title" data-i18n="how_h2">Kuidas tunnid toimuvad</h2>
+        <p class="sec-sub" style="margin-bottom: 48px" data-i18n="how_p">
+          See ei ole videokursus. See on elav tund õpetajaga — nagu koolis,
+          ainult kodus.
+        </p>
+        <div class="how-grid">
+          <div>
+            <div class="how-steps">
+              <div class="how-step">
+                <div class="step-num">01</div>
+                <div>
+                  <div class="step-title" data-i18n="step1_title">
+                    Individuaalselt — ainult õpetaja ja laps
+                  </div>
+                  <div class="step-text" data-i18n="step1_text">
+                    Mingit gruppi, mingit ootamist. Õpetaja töötab ainult teie
+                    lapsega: selgitab, vaatab ekraani, vastab küsimustele.
+                  </div>
+                </div>
+              </div>
+              <div class="how-step">
+                <div class="step-num">02</div>
+                <div>
+                  <div class="step-title" data-i18n="step2_title">
+                    Laps ehitab ja kodeerib otse tunnis
+                  </div>
+                  <div class="step-text" data-i18n="step2_text">
+                    Iga tund on uus ülesanne. Laps avab Roblox Studio, õpetaja
+                    selgitab — ja siis teeb ise. Praktika esimesest minutist.
+                  </div>
+                </div>
+              </div>
+              <div class="how-step">
+                <div class="step-num">03</div>
+                <div>
+                  <div class="step-title" data-i18n="step3_title">
+                    Zoom / Google Meet — midagi lisaks pole vaja
+                  </div>
+                  <div class="step-text" data-i18n="step3_text">
+                    Linki koosolekule — ja kõik on valmis. Roblox Studio on
+                    tasuta alla laadida ametlikult saidilt.
+                  </div>
+                </div>
+              </div>
+              <div class="how-step">
+                <div class="step-num">04</div>
+                <div>
+                  <div class="step-title" data-i18n="step4_title">
+                    Paindlik ajakava
+                  </div>
+                  <div class="step-text" data-i18n="step4_text">
+                    Valite sobiva päeva ja kellaaja. Puudusid — tunni salvestus
+                    või järeltund.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="how-pills">
+              <div class="how-pill">
+                🖥️ <span data-i18n="pill_online">Online</span>
+              </div>
+              <div class="how-pill">
+                👤 <span data-i18n="pill_individual">Individuaalne</span>
+              </div>
+              <div class="how-pill">
+                🎙️ <span data-i18n="pill_live">Elav õpetaja</span>
+              </div>
+              <div class="how-pill">
+                📹 <span data-i18n="pill_rec">Tunni salvestus</span>
+              </div>
+              <div class="how-pill">🌍 ET · RU · EN</div>
+            </div>
+          </div>
+          <div class="how-visual">
+            <div class="how-v-glow"></div>
+            <div
+              style="
+                position: relative;
+                z-index: 2;
+                margin-bottom: 16px;
+                border-radius: 14px;
+                overflow: hidden;
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+              "
+            >
+              <img
+                src="img/img-studio.png"
+                alt="Coding lesson"
+                style="width: 100%; display: block; border-radius: 14px"
+              />
+            </div>
+            <div
+              class="eyebrow"
+              style="margin-bottom: 12px; position: relative; z-index: 2"
+              data-i18n="how_preview"
+            >
+              Kuidas tund välja näeb
+            </div>
+            <div class="lesson-frame">
+              <div class="lf-bar">
+                <div class="lf-dots">
+                  <div class="lf-dot"></div>
+                  <div class="lf-dot"></div>
+                  <div class="lf-dot"></div>
+                </div>
+                <div class="lf-title" data-i18n="lesson_title">
+                  Tund #7 · Game Creator
+                </div>
+              </div>
+              <div class="lf-body">
+                <div class="cams">
+                  <div class="cam">
+                    <div class="cam-char">
+                      <div class="rb-head" style="background: #f5c5a3"></div>
+                      <div
+                        style="
+                          position: relative;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          width: 34px;
+                        "
+                      >
+                        <div
+                          style="
+                            position: absolute;
+                            left: 0;
+                            width: 8px;
+                            height: 18px;
+                            border-radius: 3px;
+                            border: 2px solid rgba(0, 0, 0, 0.2);
+                            background: #4f46e5;
+                          "
+                        ></div>
+                        <div class="rb-torso" style="background: #4f46e5"></div>
+                        <div
+                          style="
+                            position: absolute;
+                            right: 0;
+                            width: 8px;
+                            height: 18px;
+                            border-radius: 3px;
+                            border: 2px solid rgba(0, 0, 0, 0.2);
+                            background: #4f46e5;
+                          "
+                        ></div>
+                      </div>
+                      <div class="rb-legs">
+                        <div class="rb-leg" style="background: #1f2937"></div>
+                        <div class="rb-leg" style="background: #1f2937"></div>
+                      </div>
+                    </div>
+                    <div class="cam-lbl" data-i18n="cam_teacher">Õpetaja</div>
+                    <div class="cam-live"></div>
+                  </div>
+                  <div class="cam">
+                    <div class="cam-char">
+                      <div class="rb-head" style="background: #fdba74"></div>
+                      <div
+                        style="
+                          position: relative;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          width: 34px;
+                        "
+                      >
+                        <div
+                          style="
+                            position: absolute;
+                            left: 0;
+                            width: 8px;
+                            height: 18px;
+                            border-radius: 3px;
+                            border: 2px solid rgba(0, 0, 0, 0.2);
+                            background: #2dd4bf;
+                          "
+                        ></div>
+                        <div class="rb-torso" style="background: #2dd4bf"></div>
+                        <div
+                          style="
+                            position: absolute;
+                            right: 0;
+                            width: 8px;
+                            height: 18px;
+                            border-radius: 3px;
+                            border: 2px solid rgba(0, 0, 0, 0.2);
+                            background: #2dd4bf;
+                          "
+                        ></div>
+                      </div>
+                      <div class="rb-legs">
+                        <div class="rb-leg" style="background: #374151"></div>
+                        <div class="rb-leg" style="background: #374151"></div>
+                      </div>
+                    </div>
+                    <div class="cam-lbl" data-i18n="cam_student">Õpilane</div>
+                    <div class="cam-live"></div>
+                  </div>
+                </div>
+                <div class="eyebrow" style="font-size: 9px; margin-bottom: 8px">
+                  Roblox Studio · Script Editor
+                </div>
+                <div class="lesson-code">
+                  <div class="lc-row">
+                    <span class="ln">1</span
+                    ><span class="lcm">-- Lisame mängijale punkte</span>
+                  </div>
+                  <div class="lc-row">
+                    <span class="ln">2</span
+                    ><span class="lkw">local</span>&nbsp;<span class="lvar"
+                      >Players</span
+                    >&nbsp;=&nbsp;<span class="lfn">game</span>.<span
+                      class="lvar"
+                      >Players</span
+                    >
+                  </div>
+                  <div class="lc-row"><span class="ln">3</span></div>
+                  <div class="lc-row">
+                    <span class="ln">4</span
+                    ><span class="lvar">script</span>.<span class="lvar"
+                      >Parent</span
+                    >.<span class="lvar">Touched</span>:
+                  </div>
+                  <div class="lc-row">
+                    <span class="ln">5</span>&nbsp;&nbsp;<span class="lfn"
+                      >Connect</span
+                    >(<span class="lkw">function</span>(hit)
+                  </div>
+                  <div class="lc-row">
+                    <span class="ln">6</span>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                      class="lkw"
+                      >local</span
+                    >&nbsp;<span class="lvar">plr</span>&nbsp;=&nbsp;<span
+                      class="lfn"
+                      >Players</span
+                    >:
+                  </div>
+                  <div class="lc-row">
+                    <span class="ln">7</span
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lfn"
+                      >GetPlayerFromCharacter</span
+                    >(hit.<span class="lvar">Parent</span>)
+                  </div>
+                  <div class="lc-row">
+                    <span class="ln">8</span>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                      class="lkw"
+                      >if</span
+                    >&nbsp;<span class="lvar">plr</span>&nbsp;<span class="lkw"
+                      >then</span
+                    >
+                  </div>
+                  <div class="lc-row">
+                    <span class="ln">9</span
+                    >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="lvar"
+                      >plr</span
+                    >.<span class="lvar">leaderstats</span>.<span class="lvar"
+                      >Points</span
+                    >.<span class="lvar">Value</span>&nbsp;+=&nbsp;<span
+                      class="lstr"
+                      >10</span
+                    >
+                  </div>
+                  <div class="lc-row">
+                    <span class="ln">10</span>&nbsp;&nbsp;&nbsp;&nbsp;<span
+                      class="lkw"
+                      >end</span
+                    >&nbsp;<span class="lkw">end</span>)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results">
+      <div class="wrap">
+        <div class="eyebrow" style="color: var(--indigo)" data-i18n="res_label">
+          Õppetulemused
+        </div>
+        <h2 class="sec-title" style="color: #111" data-i18n="res_h2">
+          Mida laps loob
+        </h2>
+        <p class="sec-sub" style="color: #6b7280" data-i18n="res_p">
+          Päris mängud, mida saab käivitada, näidata ja millega uhkeldada.
+        </p>
+        <div class="res-grid">
+          <div class="res-card">
+            <div class="res-head rc-lv1">
+              <div class="rc-age" data-i18n="res1_age">
+                6–8 a · World Builder
+              </div>
+              <div class="rc-title" data-i18n="res1_title">
+                Esimesed maailmad ja takistused
+              </div>
+              <div class="rc-big-ico">🏗️</div>
+            </div>
+            <div class="res-body">
+              <ul class="res-list rc-lv1">
+                <li class="res-item" data-i18n="res1_1">
+                  Obby trampliinide, rööbaste ja finiširajaga
+                </li>
+                <li class="res-item" data-i18n="res1_2">
+                  Elav saar mägede, vee ja puudega
+                </li>
+                <li class="res-item" data-i18n="res1_3">
+                  Piraatide kaart laeva ja kirjutuskohaga
+                </li>
+              </ul>
+              <div class="res-tags">
+                <span class="tag-teal">Building</span
+                ><span class="tag-teal">Terrain</span
+                ><span class="tag-teal">Publishing</span>
+              </div>
+            </div>
+          </div>
+          <div class="res-card">
+            <div class="res-head rc-lv2">
+              <div class="rc-age" data-i18n="res2_age">
+                9–11 a · Game Creator
+              </div>
+              <div class="rc-title" data-i18n="res2_title">
+                Mängud mehhanismide ja liidesega
+              </div>
+              <div class="rc-big-ico">⚡</div>
+            </div>
+            <div class="res-body">
+              <ul class="res-list rc-lv2">
+                <li class="res-item" data-i18n="res2_1">
+                  Platvormmäng punktide, elude ja taimeriga
+                </li>
+                <li class="res-item" data-i18n="res2_2">
+                  Pet Simulator nuppude ja poega
+                </li>
+                <li class="res-item" data-i18n="res2_3">
+                  Mini-RPG ülesannete ja NPC-dialoogidega
+                </li>
+              </ul>
+              <div class="res-tags">
+                <span class="tag-indigo">Luau basics</span
+                ><span class="tag-indigo">GUI / UI</span
+                ><span class="tag-indigo">Game Mechanics</span>
+              </div>
+            </div>
+          </div>
+          <div class="res-card">
+            <div class="res-head rc-lv3">
+              <div class="rc-age" data-i18n="res3_age">
+                12–15 a · Studio Pro
+              </div>
+              <div class="rc-title" data-i18n="res3_title">
+                Täisväärtuslikud mängud koodiga
+              </div>
+              <div class="rc-big-ico">🔥</div>
+            </div>
+            <div class="res-body">
+              <ul class="res-list rc-lv3">
+                <li class="res-item" data-i18n="res3_1">
+                  Tower Defense majanduse ja DataStore'iga
+                </li>
+                <li class="res-item" data-i18n="res3_2">
+                  Multiplayer Simulator RemoteEventsiga
+                </li>
+                <li class="res-item" data-i18n="res3_3">
+                  Oma mäng oma idee järgi
+                </li>
+              </ul>
+              <div class="res-tags">
+                <span class="tag-amber">DataStore</span
+                ><span class="tag-amber">Client-Server</span
+                ><span class="tag-amber">OOP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section id="why">
+      <div class="wrap">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+          "
+        >
+          <div style="flex: 1; min-width: 240px">
+            <div class="eyebrow eyebrow-indigo" data-i18n="why_label">
+              Miks see oluline on
+            </div>
+            <h2
+              class="sec-title"
+              style="margin-bottom: 12px"
+              data-i18n="why_h2"
+            >
+              Oskused, mis jäävad
+            </h2>
+            <p class="sec-sub" data-i18n="why_p">
+              Programmeerimine ei ole ainult mängude loomine. See on
+              mõtlemisviis.
+            </p>
+          </div>
+          <div style="flex-shrink: 0; position: relative">
+            <div
+              style="
+                position: absolute;
+                inset: -8px;
+                background: radial-gradient(
+                  circle,
+                  rgba(45, 212, 191, 0.2) 0%,
+                  transparent 65%
+                );
+                border-radius: 50%;
+                filter: blur(20px);
+              "
+            ></div>
+            <img
+              src="img/img-robot.png"
+              alt="Robot"
+              style="
+                width: 150px;
+                border-radius: 16px;
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+                position: relative;
+                z-index: 2;
+              "
+            />
+          </div>
+        </div>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="wc-ico">🧠</div>
+            <div class="wc-title" data-i18n="why1_title">
+              Loogiline mõtlemine
+            </div>
+            <div class="wc-text" data-i18n="why1_text">
+              Oskus jagada ülesanne osadeks, mõelda samm-sammult ja leida
+              lahendusi.
+            </div>
+          </div>
+          <div class="why-card">
+            <div class="wc-ico">🎯</div>
+            <div class="wc-title" data-i18n="why2_title">
+              Konkreetne tulemus
+            </div>
+            <div class="wc-text" data-i18n="why2_text">
+              Pärast iga kursust on lapsel päris Roblox-mäng, mida saab
+              käivitada ja näidata.
+            </div>
+          </div>
+          <div class="why-card">
+            <div class="wc-ico">🌐</div>
+            <div class="wc-title" data-i18n="why3_title">Nõutud oskused</div>
+            <div class="wc-text" data-i18n="why3_text">
+              IT-erialad on maailma nõutuimate hulgas. Mida varem alustada —
+              seda kergem.
+            </div>
+          </div>
+          <div class="why-card">
+            <div class="wc-ico">🎮</div>
+            <div class="wc-title" data-i18n="why4_title">
+              Läbi selle, mis meeldib
+            </div>
+            <div class="wc-text" data-i18n="why4_text">
+              Roblox on enamikule lastele tuttav. Õppimine läbi
+              lemmiksplatvormiga töötab kordades paremini.
+            </div>
+          </div>
+          <div class="why-card">
+            <div class="wc-ico">✏️</div>
+            <div class="wc-title" data-i18n="why5_title">Loovus + tehnika</div>
+            <div class="wc-text" data-i18n="why5_text">
+              Laps mõtleb ise välja kontseptsiooni, disaini ja mehhanismid.
+              Areneb mõlemal ajupoolkerel.
+            </div>
+          </div>
+          <div class="why-card">
+            <div class="wc-ico">💪</div>
+            <div class="wc-title" data-i18n="why6_title">Enesekindlus</div>
+            <div class="wc-text" data-i18n="why6_text">
+              Teha mäng oma kätega ja näidata sõpradele — tõeline uhkuse ja
+              enesekindluse allikas.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENROLL -->
+    <section id="enroll">
+      <div class="wrap">
+        <div class="enroll-grid">
+          <div>
+            <div class="eyebrow" data-i18n="enroll_label">Registreerumine</div>
+            <h2 class="sec-title" data-i18n="enroll_h2">
+              Registreeru prooviõppele
+            </h2>
+            <p class="sec-sub" data-i18n="enroll_p">
+              Täitke vorm — valime sobiva kursuse ja võtame teiega ühendust
+              päeva jooksul.
+            </p>
+            <ul class="enroll-pts">
+              <li class="enroll-pt">
+                <div class="epi">✅</div>
+                <span data-i18n="ep1">Prooviõpe tasuta — ilma kohustuseta</span>
+              </li>
+              <li class="enroll-pt">
+                <div class="epi">👤</div>
+                <span data-i18n="ep2"
+                  >Individuaalselt — ainult õpetaja ja teie laps</span
+                >
+              </li>
+              <li class="enroll-pt">
+                <div class="epi">📱</div>
+                <span data-i18n="ep3"
+                  >Vastame päeva jooksul — telefoni või Telegrami teel</span
+                >
+              </li>
+              <li class="enroll-pt">
+                <div class="epi">🌍</div>
+                <span data-i18n="ep4"
+                  >Tunnid eesti, vene või inglise keeles</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="form-card" id="form-card">
+            <div class="form-hd" data-i18n="form_hd">🎮 Prooviõpe</div>
+            <div class="rec-bann" id="rec-banner">
+              <div class="rec-ico" id="rec-ico">🚀</div>
+              <div>
+                <div class="rec-name" id="rec-name"></div>
+                <div class="rec-desc" id="rec-desc"></div>
+              </div>
+            </div>
+            <div class="form-err-msg" id="form-err">
+              <span data-i18n="form_err"
+                >Midagi läks valesti. Kirjutage meile otse.</span
+              >
+            </div>
+            <form id="enroll-form" novalidate>
+              <div class="f-sec" data-i18n="fsec_you">Teie kohta</div>
+              <div class="f-row">
+                <div class="f-group">
+                  <label data-i18n="fl_name"
+                    >Teie nimi <span class="req">*</span></label
+                  ><input
+                    class="f-ctrl"
+                    type="text"
+                    id="f-name"
+                    data-i18n-placeholder="fp_name"
+                    placeholder="Teie nimi"
+                    autocomplete="name"
+                  />
+                  <div class="f-err" id="e-name"></div>
+                </div>
+                <div class="f-group">
+                  <label data-i18n="fl_email"
+                    >Email <span class="req">*</span></label
+                  ><input
+                    class="f-ctrl"
+                    type="email"
+                    id="f-email"
+                    placeholder="anna@gmail.com"
+                    autocomplete="email"
+                  />
+                  <div class="f-err" id="e-email"></div>
+                </div>
+              </div>
+              <div class="f-group">
+                <label data-i18n="fl_phone"
+                  >Telefon <span class="req">*</span></label
+                ><input
+                  class="f-ctrl"
+                  type="tel"
+                  id="f-phone"
+                  placeholder="+372 5xxx xxxx"
+                  autocomplete="tel"
+                />
+                <div class="f-err" id="e-phone"></div>
+              </div>
+              <hr class="f-div" />
+              <div class="f-sec" data-i18n="fsec_child">Lapse kohta</div>
+              <div class="f-row">
+                <div class="f-group">
+                  <label data-i18n="fl_age"
+                    >Vanus <span class="req">*</span>
+                    <span class="hint">(6–15)</span></label
+                  ><input
+                    class="f-ctrl"
+                    type="number"
+                    id="f-age"
+                    min="6"
+                    max="15"
+                    placeholder="10"
+                  />
+                  <div class="f-err" id="e-age"></div>
+                </div>
+                <div class="f-group">
+                  <label data-i18n="fl_lang"
+                    >Õppekeel <span class="req">*</span></label
+                  ><select class="f-ctrl" id="f-lang">
+                    <option value="" data-i18n="fl_lang_pick">Vali keel</option>
+                    <option value="estonian">🇪🇪 Eesti</option>
+                    <option value="russian">🇷🇺 Vene</option>
+                    <option value="english">🇬🇧 Inglise</option>
+                  </select>
+                  <div class="f-err" id="e-lang"></div>
+                </div>
+              </div>
+              <div class="f-group">
+                <label data-i18n="fl_level"
+                  >Kogemus Roblox Studioga <span class="req">*</span></label
+                >
+                <div class="radio-group">
+                  <div
+                    class="radio-opt"
+                    onclick="pickLevel('beginner', this)"
+                    tabindex="0"
+                    role="radio"
+                    aria-checked="false"
+                  >
+                    <div class="radio-dot"><div class="radio-inner"></div></div>
+                    <div>
+                      <div class="radio-title" data-i18n="rl1_title">
+                        🌱 Algaja
+                      </div>
+                      <div class="radio-sub" data-i18n="rl1_sub">
+                        Pole Roblox Studiot proovinud
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="radio-opt"
+                    onclick="pickLevel('tried', this)"
+                    tabindex="0"
+                    role="radio"
+                    aria-checked="false"
+                  >
+                    <div class="radio-dot"><div class="radio-inner"></div></div>
+                    <div>
+                      <div class="radio-title" data-i18n="rl2_title">
+                        🎮 Proovinud
+                      </div>
+                      <div class="radio-sub" data-i18n="rl2_sub">
+                        Käinud Studios, teinud midagi
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="radio-opt"
+                    onclick="pickLevel('experienced', this)"
+                    tabindex="0"
+                    role="radio"
+                    aria-checked="false"
+                  >
+                    <div class="radio-dot"><div class="radio-inner"></div></div>
+                    <div>
+                      <div class="radio-title" data-i18n="rl3_title">
+                        ⭐ Kogenud
+                      </div>
+                      <div class="radio-sub" data-i18n="rl3_sub">
+                        Loonud mänge või kirjutanud skripte
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="f-err" id="e-level"></div>
+              </div>
+              <hr class="f-div" />
+              <div class="f-group">
+                <label data-i18n="fl_comment"
+                  >Kommentaar
+                  <span class="hint" data-i18n="optional"
+                    >(valikuline)</span
+                  ></label
+                ><textarea
+                  class="f-ctrl"
+                  id="f-comment"
+                  rows="3"
+                  data-i18n-placeholder="fp_comment"
+                  placeholder="Soovid, küsimused..."
+                ></textarea>
+              </div>
+              <button type="submit" class="sub-btn" id="submit-btn">
+                <span data-i18n="sub_btn">🎮 Registreeru prooviõppele</span>
+              </button>
+              <p class="form-note" data-i18n="form_note">
+                Nupule klõpsates nõustute isikuandmete töötlemisega. Me ei jaga
+                andmeid kolmandatele osapooltele.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="wrap">
+        <div class="eyebrow" data-i18n="faq_label">KKK</div>
+        <h2 class="sec-title" data-i18n="faq_h2">Korduma kippuvad küsimused</h2>
+        <p class="sec-sub" style="margin-bottom: 40px" data-i18n="faq_p">
+          Ei leidnud vastust? Kirjutage Telegrami — vastame kiiresti.
+        </p>
+        <div style="max-width: 720px" id="faq-list"></div>
+      </div>
+    </section>
+
+    <!-- STUDIO BANNER -->
+    <section
+      style="
+        background: var(--bg3);
+        padding: 72px 0;
+        border-top: 1px solid var(--border);
+      "
+    >
+      <div class="wrap">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+          "
+        >
+          <div>
+            <div
+              class="eyebrow"
+              style="margin-bottom: 12px"
+              data-i18n="enroll_label"
+            >
+              Registreerumine
+            </div>
+            <h2
+              style="
+                font-size: clamp(22px, 3vw, 34px);
+                font-weight: 800;
+                letter-spacing: -0.02em;
+                line-height: 1.2;
+                margin-bottom: 16px;
+                color: #fff;
+              "
+              data-i18n="enroll_h2"
+            >
+              Registreeru prooviõppele
+            </h2>
+            <p
+              style="
+                font-size: 15px;
+                color: var(--muted2);
+                line-height: 1.75;
+                max-width: 420px;
+                margin-bottom: 28px;
+              "
+              data-i18n="enroll_p"
+            >
+              Täitke vorm — valime sobiva kursuse ja võtame teiega ühendust
+              päeva jooksul.
+            </p>
+            <button
+              class="btn btn-xl btn-teal"
+              onclick="goForm()"
+              data-i18n="hero_btn1"
+            >
+              🎮 Registreeru prooviõppele
+            </button>
+          </div>
+          <div style="position: relative">
+            <div
+              style="
+                position: absolute;
+                inset: -20px;
+                background: radial-gradient(
+                  circle,
+                  rgba(99, 102, 241, 0.15) 0%,
+                  transparent 65%
+                );
+                border-radius: 50%;
+                filter: blur(40px);
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="wrap">
+        <div class="footer-cta">
+          <div class="footer-cta-glow"></div>
+          <div class="footer-cta-z">
+            <div class="footer-cta-title" data-i18n="ftcta_title">
+              Valmis alustama?
+            </div>
+        <div class="footer-cards">
+          <div class="footer-card">
+            <div class="fc-ico">📧</div>
+            <div class="fc-lbl">Email</div>
+            <div class="fc-val">
+              <a href="mailto:info@robloxkool.ee">info@robloxkool.ee</a>
+            </div>
+          </div>
+          <div class="footer-card">
+            <div class="fc-ico">📱</div>
+            <div class="fc-lbl">Telegram</div>
+            <div class="fc-val">
+              <a href="https://t.me/robloxkool">@robloxkool</a>
+            </div>
+          </div>
+          <div class="footer-card">
+            <div class="fc-ico">🌍</div>
+            <div class="fc-lbl" data-i18n="fc_lang">Keeled</div>
+            <div class="fc-val">ET · RU · EN</div>
+          </div>
+        </div>
+        <div class="footer-bot">
+          <div class="footer-logo">
+            <div class="footer-logo-icon">🎮</div>
+            <span>Roblox<em>Kool</em></span>
+          </div>
+          <p data-i18n="footer_copy">
+            © 2025 Roblox Programmeerimiskool · Ei ole Roblox Corporationi
+            ametlik toode
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
