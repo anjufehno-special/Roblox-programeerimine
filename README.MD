@@ -2,7 +2,8 @@
 
 > Multilingual landing page for an online Roblox Studio coding school for children aged 6–15. Built with vanilla HTML, CSS, and JavaScript — no frameworks needed.
 
-**[Live Demo →](https://github.com/anjufehno-special/Roblox-programeerimine.git)**
+**[Live Demo →](https://anjufehno-special.github.io/Roblox-programeerimine/)**
+![Roblox Coding School Preview](preview.png)
 
 ---
 
